@@ -4,7 +4,6 @@ import random
 def split(word):
     return list(word)
 
-
 rows=int(input("Number of rows: "))
 columns=int(input("Number of columns: "))
 colList=[]
