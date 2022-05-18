@@ -60,8 +60,9 @@ def play(bet_input):
             carta = show(i)
             player = sum_points(carta, player)
             if player>21:
-                  print(f'You LOST! Points: {player}\n')
-                  return (player,i)
+                  money = 5000 - total_bet
+                  print(f'You LOST! Points: {player}. Now you have: {money}\n')
+                  return (player,i, total_bet)
                   break
             else:
                   print(f'You have {player} points.\n')
