@@ -4,25 +4,26 @@ guess = str(randint(0,1000))
 
 print("""
 Bagels, a deductive logic game.
-By Al Sweigart al@inventwithpython.com
 I am thinking of a 3-digit number. Try to guess what it is.
+
 Here are some clues:
 When I say:    That means:
   Pico         One digit is correct but in the wrong position.
   Fermi        One digit is correct and in the right position.
   Bagels       No digit is correct.
+
 I have thought up a number.
 You have 10 guesses to get it.
+
  """)
 
-def check_number(num, guess, position):
+def check_number(num, guess, position, pin1, pin2):
     if num in guess:
         if num in guess[position]:
             print("Fermi", end=" ")
         else:
-            print("Pico", end=" ")
-    else:
-        return False
+            if num !=pin1 or num!=pin2:
+                print("Pico", end=" ")
 
 def play(guess):
     for i in range(1, 11):
@@ -38,9 +39,9 @@ def play(guess):
             question()
             break
         else:
-            check_number(fir, guess, 0)
-            check_number(sec, guess, 1)
-            check_number(thi, guess, 2)
+            check_number(fir, guess, 0, sec, thi)
+            check_number(sec, guess, 1, fir, thi)
+            check_number(thi, guess, 2, fir, sec)
             if fir not in guess and sec not in guess and thi not in guess:
                 print("Bagels", end=" ")
     print("\nYou've Lost!")
