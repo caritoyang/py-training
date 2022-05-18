@@ -1,5 +1,4 @@
 import random
-from this import d
 
 CORA = chr(9829) # Character 9829 is '♥'.
 DIAM = chr(9830) # Character 9830 is '♦'.
@@ -31,6 +30,7 @@ def main():
       if total <=21:
             crupier_points = crupier(card)
             outcome(total, crupier_points, final_bet)
+      close = input("Press any key to exit")             
 
 
 def cards():
