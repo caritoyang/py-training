@@ -61,7 +61,7 @@ def play(bet_input):
             player = sum_points(carta, player)
             if player>21:
                   money = 5000 - total_bet
-                  print(f'You LOST! Points: {player}. Now you have: {money}\n')
+                  print(f'You LOST! Points: {player}. Now you have: ${money}\n')
                   return (player,i, total_bet)
                   break
             else:
@@ -113,13 +113,13 @@ def outcome(total, crupier, bet):
             print(f'YOU LOSE - Total: {total}')
       else:
             if total == crupier:
-                  print(f'You got your money back. You still got $5000')
+                  print(f'You got your money back. You still got $5000\n')
             elif (21-total) < (21-crupier) or crupier>21:
                   bet = 5000 + bet
-                  print(f'YOU WON! Now you have {bet}')
+                  print(f'YOU WON! Now you have ${bet}\n')
             else:
                   bet = 5000 - bet
-                  print(f'YOU LOST! Now you have {bet}')
+                  print(f'YOU LOST! Now you have ${bet}\n')
 
 def decision():
       decision = input("(H)it, (S)tand, (D)ouble down\n")
