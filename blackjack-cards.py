@@ -123,7 +123,7 @@ def outcome(total, crupier, bet):
                   print(f'YOU LOST! Now you have ${bet}\n')
 
 def decision():
-      decision = input("(H)it, (S)tand, (D)ouble down\n")
+      decision = input("(H)it, (S)tand, (D)ouble down: ")
       return decision.upper()
 
 def print_card(card):
