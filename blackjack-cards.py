@@ -60,7 +60,7 @@ def play(bet_input):
             print_card(carta)
             player = sum_points(carta, player)
             if player>21:
-                  money = 5000 - total_bet
+                  money = 5000 - int(total_bet)
                   print(f'You LOST! Points: {player}. Now you have: ${money}\n')
                   return (player,i, total_bet)
                   break
@@ -83,7 +83,10 @@ def sum_points(carta, points):
                   points = points + 10
       elif carta[0][0]=="A":
             if points <= 10:
-                  points = points + 11
+                  if points+11 <22:
+                        points = points + 11
+                  else:
+                        points = points + 1
             else:
                   points = points + 1
       else:
@@ -109,7 +112,8 @@ def crupier(card):
 
 def outcome(total, crupier, bet):
       if total == 21:
-            print('YOU WON!')
+            bet = 5000 + bet
+            print(f'YOU WON! Now you have ${bet}\n')
       elif total > 21:
             print(f'YOU LOSE - Total: {total}')
       else:
